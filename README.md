@@ -30,7 +30,7 @@ And we should see something like:
     platform... using builtin-java classes where applicable
     Starting read.
 
-    2305843009225712352	 rhinoId: 2305843009225712352 Properties: [songLength:
+    2305843009225712352  rhinoId: 2305843009225712352 Properties: [songLength:
     <Item int_value:211000> songName: <Item string_value:Hackwave> songId:
     <Item int_value:12018400> songMbid: <Item string_value:9783a9ef-629f-3374-8dde-633c3a156ac2> ]
     outEdges: {similarSong --> 2305843009213804804 Properties:
@@ -40,11 +40,11 @@ And we should see something like:
 ## Thrift Definition
 Let's take a look at the thrift definition in `graph.thrift`:
 
-  struct TVertex {
-    1: optional i64 rhinoId, // A unique ID in the dataset for the vertex.
-    3: optional map<string, Item> properties,
-    4: optional list<TEdge> outEdges,
-  }
+    struct TVertex {
+      1: optional i64 rhinoId, // A unique ID in the dataset for the vertex.
+      3: optional map<string, Item> properties,
+      4: optional list<TEdge> outEdges,
+    }
 
 (Note I've omitted fields that aren't present in the published data.
 We use those fields as part of the ETL pipeline outlined
